@@ -96,10 +96,24 @@ public class branched_programs {
             else if (A > z && (B > x || B > y)) System.out.println("the brick will go through the hole");
             else System.out.println("the brick will not go through the hole");
         }
+    }
+    public static void fifth_task(){
+        // Find func result
+        // x <= 3: f = x^2 - 3x + 9
+        // x > 3: f = 1 / (x^3 + 6)
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("x = ");
+        double x = scanner.nextDouble();
+        // calculate
+        double f_x = 0;
+        if (x <= 3) f_x = Math.pow(x, 2) - 3*x + 9;
+        if (x > 3) f_x = 1 / (Math.pow(x, 3) + 6);
+        System.out.println("F(x) = " + f_x);
 
     }
     public static void main(String[] args) {
         // write your code here
-        fourth_task();
+        fifth_task();
     }
 }
