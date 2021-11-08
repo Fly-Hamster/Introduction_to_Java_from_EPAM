@@ -46,10 +46,31 @@ public class branched_programs {
                 + (Math.max(Math.min(a, b), Math.min(c, d))));
     }
     public static void third_task(){
-
+        // Have A(x1, y1), B(x2, y2), C(x3, y3). Check if they are on the same line
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("x1 = ");
+        double x1 = scanner.nextDouble();
+        System.out.print("y1 = ");
+        double y1 = scanner.nextDouble();
+        System.out.print("x2 = ");
+        double x2 = scanner.nextDouble();
+        System.out.print("y2 = ");
+        double y2 = scanner.nextDouble();
+        System.out.print("x3 = ");
+        double x3 = scanner.nextDouble();
+        System.out.print("y3 = ");
+        double y3 = scanner.nextDouble();
+        // calculate
+        // equation of a straight line passing through a point
+        // (x - x1) / (x2 - x1) = (y - y1) / (y2 - y1)
+        // x = x3, y = y3
+        boolean result = ((x3 - x1) / (x2 - x1) == (y3 - y1) / (y2 - y1));
+        if(result) System.out.println("Points on the same line");
+        else System.out.println("Points not on the same line");
     }
     public static void main(String[] args) {
         // write your code here
-        second_task();
+        third_task();
     }
 }
