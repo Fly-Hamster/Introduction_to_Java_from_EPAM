@@ -69,8 +69,37 @@ public class branched_programs {
         if(result) System.out.println("Points on the same line");
         else System.out.println("Points not on the same line");
     }
+    public static void fourth_task(){
+        // rectangular hole of size A * B. Brick of size x * y * z. Will the brick fit through the hole?
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("A = ");
+        double A = scanner.nextDouble();
+        System.out.print("B = ");
+        double B = scanner.nextDouble();
+        System.out.print("x = ");
+        double x = scanner.nextDouble();
+        System.out.print("y = ");
+        double y = scanner.nextDouble();
+        System.out.print("z = ");
+        double z = scanner.nextDouble();
+        // calculate
+        if (A>B){
+            if (B > x && (A > y || A > z)) System.out.println("the brick will go through the hole");
+            else if (B > y && (A > x || A > z)) System.out.println("the brick will go through the hole");
+            else if (B > z && (A > x || A > y)) System.out.println("the brick will go through the hole");
+            else System.out.println("the brick will not go through the hole");
+        }
+        else if (B>=A){
+            if (A > x && (B > y || B > z)) System.out.println("the brick will go through the hole");
+            else if (A > y && (B > x || B > z)) System.out.println("the brick will go through the hole");
+            else if (A > z && (B > x || B > y)) System.out.println("the brick will go through the hole");
+            else System.out.println("the brick will not go through the hole");
+        }
+
+    }
     public static void main(String[] args) {
         // write your code here
-        third_task();
+        fourth_task();
     }
 }
