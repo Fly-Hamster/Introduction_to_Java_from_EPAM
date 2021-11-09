@@ -44,7 +44,16 @@ public class loop_programs {
         }
         System.out.println("Result = " + result);
     }
+    public static void fourth_task(){
+        // find the product of the squares of the first 200 numbers
+        // calculate
+        long result = 1;
+        for (int i = 1; i<=200; i++){
+            result *= Math.pow(i, 2);
+        }
+        System.out.println("Result = " + result);
+    }
     public static void main(String[] args) {
-        third_task();
+        fourth_task();
     }
 }
