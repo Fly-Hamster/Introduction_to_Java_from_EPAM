@@ -36,9 +36,15 @@ public class loop_programs {
         }
     }
     public static void third_task(){
-
+        // find the sum of squares of the first 100 numbers
+        // calculate
+        int result = 0;
+        for (int i = 0; i<100; i++){
+            result += Math.pow(i, 2);
+        }
+        System.out.println("Result = " + result);
     }
     public static void main(String[] args) {
-        second_task();
+        third_task();
     }
 }
