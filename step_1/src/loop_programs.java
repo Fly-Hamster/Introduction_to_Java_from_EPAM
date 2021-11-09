@@ -78,7 +78,33 @@ public class loop_programs {
             System.out.println(symbol + " - " + i);
         }
     }
+    public static void seventh_task(){
+        // for natural numbers in the range from m to n,
+        // print a list of divisors other than 1 and itself.
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter start (m): ");
+        int m = scanner.nextInt();
+        while (m <= 0){
+            System.out.print("It's not positive number. Enter number again: ");
+            m = scanner.nextInt();
+        }
+        System.out.print("Enter start (n): ");
+        int n = scanner.nextInt();
+        while (n <= 0){
+            System.out.print("It's not positive number. Enter number again: ");
+            n = scanner.nextInt();
+        }
+        // calculate
+        for (int i = m; i <= n; i++){
+            System.out.print(i + ": ");
+            for (int j = 2; j < i; j++){
+                if (i % j == 0) System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
-        sixth_task();
+        seventh_task();
     }
 }
