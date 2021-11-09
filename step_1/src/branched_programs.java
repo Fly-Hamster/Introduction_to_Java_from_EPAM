@@ -110,7 +110,6 @@ public class branched_programs {
         if (x <= 3) f_x = Math.pow(x, 2) - 3*x + 9;
         if (x > 3) f_x = 1 / (Math.pow(x, 3) + 6);
         System.out.println("F(x) = " + f_x);
-
     }
     public static void main(String[] args) {
         // write your code here
