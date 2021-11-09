@@ -53,7 +53,22 @@ public class loop_programs {
         }
         System.out.println("Result = " + result);
     }
+    public static void fifth_task(){
+        //
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter e: ");
+        double e = scanner.nextDouble();
+        // calculate
+        double result = 0;
+        for (int n = 1; ; n++){
+            double a_n = 1 / Math.pow(2, n) + 1 / Math.pow(3, n);
+            if (Math.abs(a_n) >= e) result += a_n;
+            else break;
+        }
+        System.out.println("Result: " + result);
+    }
     public static void main(String[] args) {
-        fourth_task();
+        fifth_task();
     }
 }
