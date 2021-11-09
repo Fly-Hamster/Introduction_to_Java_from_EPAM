@@ -15,7 +15,30 @@ public class loop_programs {
         for(int i = 1; i <= number_from_user; sum += i, i++);
         System.out.println("Sum from 1 to " + number_from_user + " = " + sum);
     }
+    public static void second_task(){
+        // have [a, b], step = h, find function values:
+        // x>2: y = x
+        // x<=2: y = -x
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter start (a): ");
+        double a = scanner.nextDouble();
+        System.out.print("Enter end (b): ");
+        double b = scanner.nextDouble();
+        System.out.print("Enter step (h): ");
+        double h = scanner.nextDouble();
+        // calculate
+        double y = 0;
+        for (double x = a; x <= b; x+=h){
+            if(x > 2.0) y = x;
+            if (x <= 2.0) y = -x;
+            System.out.println("y = " + y);
+        }
+    }
+    public static void third_task(){
+
+    }
     public static void main(String[] args) {
-        first_task();
+        second_task();
     }
 }
