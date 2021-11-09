@@ -54,7 +54,9 @@ public class loop_programs {
         System.out.println("Result = " + result);
     }
     public static void fifth_task(){
-        //
+        // there is a number series and a number e.
+        // output the sum of those terms that modulo> = e.
+        // Common member of the series: a_n = 1/2^n + 1/3^n
         // get options
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter e: ");
@@ -68,7 +70,15 @@ public class loop_programs {
         }
         System.out.println("Result: " + result);
     }
+    public static void sixth_task(){
+        // display the correspondence between characters and their numerical representation
+        // calculate
+        for (int i = 0; i <256; i++){
+            char symbol = (char) i;
+            System.out.println(symbol + " - " + i);
+        }
+    }
     public static void main(String[] args) {
-        fifth_task();
+        sixth_task();
     }
 }
