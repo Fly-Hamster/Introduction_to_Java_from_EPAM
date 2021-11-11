@@ -104,7 +104,48 @@ public class loop_programs {
             System.out.println();
         }
     }
+    public static void eighth_task(){
+        // 2 numbers are given.
+        // determine the numerals included in both numbers.
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter start (a): ");
+        double a = scanner.nextDouble();
+        System.out.print("Enter end (b): ");
+        double b = scanner.nextDouble();
+        // calculate
+        // chek int or double:
+        boolean chek = false; // 2 number int - chek = true, else chek = false
+        if (a - (int) a == 0 && b - (int) b == 0) chek = true;
+        char[] array_a = Double.toString(a).toCharArray();
+        char[] array_b = Double.toString(b).toCharArray();
+        String str_preresult = "";
+        for (int i = 0; i < array_a.length; i++){
+            for (int j = 0; j < array_b.length; j++){
+                if (array_a[i] == (array_b[j])) {
+                    if (chek && (array_a[i] == ',' || array_a[i] =='.')) {
+                        // int number - nnn, int number in double - nnn.0
+                        // if user write int number he don't use 0
+                        // exit from all cycles
+                        i = array_a.length + 1;
+                        break;
+                    }
+                    else if (array_a[i] != ',' && array_a[i] !='.')
+                        str_preresult += array_a[i] + " ";
+
+                }
+            }
+        }
+        // check for repeating the same numbers
+        char[] array_preanswer = str_preresult.toCharArray();
+        str_preresult = "";
+        for (int i = 0; i < array_preanswer.length; i++){
+            if (str_preresult.indexOf(array_preanswer[i]) == -1)
+                str_preresult += array_preanswer[i] + " ";
+        }
+        System.out.println(str_preresult);
+    }
     public static void main(String[] args) {
-        seventh_task();
+        eighth_task();
     }
 }
