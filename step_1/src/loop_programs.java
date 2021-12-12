@@ -117,33 +117,33 @@ public class loop_programs {
         // chek int or double:
         boolean chek = false; // 2 number int - chek = true, else chek = false
         if (a - (int) a == 0 && b - (int) b == 0) chek = true;
-        char[] array_a = Double.toString(a).toCharArray();
-        char[] array_b = Double.toString(b).toCharArray();
+        String str_a = Double.toString(a);
+        String str_b = Double.toString(b);
         String str_preresult = "";
-        for (int i = 0; i < array_a.length; i++){
-            for (int j = 0; j < array_b.length; j++){
-                if (array_a[i] == (array_b[j])) {
-                    if (chek && (array_a[i] == ',' || array_a[i] =='.')) {
+        for (int i = 0; i < str_a.length(); i++){
+            for (int j = 0; j < str_b.length(); j++){
+                if (str_a.charAt(i) == (str_b.charAt(j))) {
+                    if (chek && (str_a.charAt(i) == ',' || str_a.charAt(i) =='.')) {
                         // int number - nnn, int number in double - nnn.0
                         // if user write int number he don't use 0
                         // exit from all cycles
-                        i = array_a.length + 1;
+                        i = str_a.length() + 1;
                         break;
                     }
-                    else if (array_a[i] != ',' && array_a[i] !='.')
-                        str_preresult += array_a[i] + " ";
+                    else if (str_a.charAt(i) != ',' && str_a.charAt(i) !='.')
+                        str_preresult += str_a.charAt(i) + " ";
 
                 }
             }
         }
         // check for repeating the same numbers
         char[] array_preanswer = str_preresult.toCharArray();
-        str_preresult = "";
-        for (int i = 0; i < array_preanswer.length; i++){
-            if (str_preresult.indexOf(array_preanswer[i]) == -1)
-                str_preresult += array_preanswer[i] + " ";
+        String str_result = "";
+        for (int i = 0; i < str_preresult.length(); i++){
+            if (str_result.indexOf(str_preresult.charAt(i)) == -1)
+                str_result += str_preresult.charAt(i) + " ";
         }
-        System.out.println(str_preresult);
+        System.out.println(str_result);
     }
     public static void main(String[] args) {
         eighth_task();
