@@ -137,7 +137,6 @@ public class loop_programs {
             }
         }
         // check for repeating the same numbers
-        char[] array_preanswer = str_preresult.toCharArray();
         String str_result = "";
         for (int i = 0; i < str_preresult.length(); i++){
             if (str_result.indexOf(str_preresult.charAt(i)) == -1)
