@@ -48,8 +48,47 @@ public class oneDimensional_arrays {
         }
         System.out.println(number_of_replacement);
     }
-
+    public static void third_task(){
+        // array of real numbers
+        // count the numbers of positive, negative and zeros
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        double [] a = new double[N];
+        for(int i = 0; i < N; i++){
+            System.out.print("Enter a[" + i + "]: ");
+            a[i] = scanner.nextDouble();
+        }
+        int positive = 0, negative = 0, zeros = 0;
+        // calculate
+        for (int i = 0; i < N; i++){
+            if (a[i] > 0) positive += 1;
+            else if (a[i] == 0) zeros += 1;
+            else negative += 1;
+        }
+        // print result
+        System.out.println("Positive: " + positive);
+        System.out.println("Zeros: " + zeros);
+        System.out.println("Negative: " + negative);
+    }
     public static void main(String[] args) {
-        second_task();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter task number from 1 to 10: ");
+        int task_number = scanner.nextInt();
+        switch (task_number){
+            case 1:
+                first_task();
+                break;
+            case 2:
+                second_task();
+                break;
+            case 3:
+                third_task();
+                break;
+            default:
+                System.out.println("Error!");
+                break;
+        }
     }
 }
