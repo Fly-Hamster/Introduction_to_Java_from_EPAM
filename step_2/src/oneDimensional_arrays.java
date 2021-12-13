@@ -107,6 +107,22 @@ public class oneDimensional_arrays {
             System.out.print(a[i] + " ");
 
     }
+    public static void fifth_task () {
+        // there is a sequence of real numbers
+        // print all a[i] > i
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        double [] a = new double[N];
+        for(int i = 0; i < N; i++){
+            System.out.print("Enter a[" + i + "]: ");
+            a[i] = scanner.nextDouble();
+        }
+        // calculate
+        for (int i = 0; i < N; i++)
+            if (a[i] > i) System.out.print(a[i] + " ");
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter task number from 1 to 10: ");
@@ -116,6 +132,7 @@ public class oneDimensional_arrays {
             case 2 -> second_task();
             case 3 -> third_task();
             case 4 -> four_task();
+            case 5 -> fifth_task();
             default -> System.out.println("Error!");
         }
     }
