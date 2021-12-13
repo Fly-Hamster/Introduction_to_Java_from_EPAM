@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class oneDimensional_arrays {
     public static void first_task(){
@@ -72,23 +73,50 @@ public class oneDimensional_arrays {
         System.out.println("Zeros: " + zeros);
         System.out.println("Negative: " + negative);
     }
+    public static void four_task(){
+        // there is a sequence of real numbers
+        // swap max and min places
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        double [] a = new double[N];
+        for(int i = 0; i < N; i++){
+            System.out.print("Enter a[" + i + "]: ");
+            a[i] = scanner.nextDouble();
+        }
+        // calculate
+        double min = a[0], max = a[0];
+        int max_index = 0, min_index = 0;
+        for(int i = 0; i < N;  i++){
+            if (a[i] > max){
+                max = a[i];
+                max_index = i;
+            }
+            if (a[i] < min){
+                min = a[i];
+                min_index = i;
+            }
+        }
+        // swap max and min
+        double temp = a[max_index];
+        a[max_index] = a[min_index];
+        a[min_index] = temp;
+        // print result
+        for (int i = 0; i < N; i++)
+            System.out.print(a[i] + " ");
+
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter task number from 1 to 10: ");
         int task_number = scanner.nextInt();
         switch (task_number){
-            case 1:
-                first_task();
-                break;
-            case 2:
-                second_task();
-                break;
-            case 3:
-                third_task();
-                break;
-            default:
-                System.out.println("Error!");
-                break;
+            case 1 -> first_task();
+            case 2 -> second_task();
+            case 3 -> third_task();
+            case 4 -> four_task();
+            default -> System.out.println("Error!");
         }
     }
 }
