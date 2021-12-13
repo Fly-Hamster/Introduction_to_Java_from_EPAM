@@ -23,7 +23,33 @@ public class oneDimensional_arrays {
         }
         System.out.println(sum_result);
     }
+    public static void second_task() {
+        // there is a sequence of real numbers
+        // Find numbers greater than Z
+        // count the number of replacements
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Z: ");
+        int Z = scanner.nextInt();
+        int number_of_replacement = 0;
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        double [] a = new double[N];
+        for(int i = 0; i < N; i++){
+            System.out.print("Enter a[" + i + "]: ");
+            a[i] = scanner.nextDouble();
+        }
+        // calculate
+        for (int i = 0; i < N; i++){
+            if (a[i] > Z){
+                a[i] = Z;
+                number_of_replacement += 1;
+            }
+        }
+        System.out.println(number_of_replacement);
+    }
+
     public static void main(String[] args) {
-        first_task();
+        second_task();
     }
 }
