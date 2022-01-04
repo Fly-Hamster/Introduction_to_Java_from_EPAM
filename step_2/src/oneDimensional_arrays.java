@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.Scanner;
 public class oneDimensional_arrays {
     public static void first_task(){
@@ -173,6 +173,35 @@ public class oneDimensional_arrays {
         System.out.println("Result: " + result);
     }
     public static void eighth_task(){
+        // последовательность целочисленных a1, a2, ..., an
+        // составить новую последовательность без чисел =min(a1, a2, ..., an)
+        // get options:
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        int [] a = new int[N];
+        for(int i = 0; i < N; i++){
+            a[i] = (int)(Math.random()*10);
+        }
+        int min = a[0];
+        // calculate
+        for(int number : a)
+            min = number < min ? number : min;
+        int count = N;
+        for (int number :a)
+            if (number == min) count--;
+        int [] res_array = new int[count];
+        count = 0;
+        for(int i = 0; i < N; i++)
+            if(a[i] != min){
+                res_array[count] = a[i];
+                count++;
+            }
+        for(int number : a)
+            System.out.print(number + " ");
+        System.out.println();
+        for(int number : res_array)
+            System.out.print(number + " ");
 
     }
     public static void nineth_task(){
