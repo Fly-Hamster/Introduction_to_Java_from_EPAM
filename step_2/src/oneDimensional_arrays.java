@@ -149,7 +149,28 @@ public class oneDimensional_arrays {
         System.out.println("Result: " + sum);
     }
     public static void seventh_task(){
+        // Действительные числа a1, a2, ..., an
+        // find max(a1 + a2n, a2 + a2n+1, ..., an + an+1)
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        double [] a = new double[N];
+        for(int i = 0; i < N; i++){
+            System.out.print("Enter a[" + i + "]: ");
+            a[i] = scanner.nextDouble();
+        }
+        double result = a[0];
+        // calculate
+        int  [] res_array = new int [N];
+        for(int i = 0; i < N; i++){
+            res_array[i] += a[i];
+            int index = (2*a.length -i - 1) % N;
+            res_array[i] += a[index];
 
+            if (res_array[i] > result) result = res_array[i];
+        }
+        System.out.println("Result: " + result);
     }
     public static void eighth_task(){
 
