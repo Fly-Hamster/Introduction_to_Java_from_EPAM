@@ -204,8 +204,49 @@ public class oneDimensional_arrays {
             System.out.print(number + " ");
 
     }
-    public static void nineth_task(){
+    public static void ninth_task(){
+        // массив целых чисел
+        // размер массива n
+        // найти наиболее часто встречаемое число
+        // если их несколько - наименьшее из них
 
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        int [] a = new int[N];
+        for(int i = 0; i < N; i++){
+            a[i] = (int)(Math.random()*10);
+        }
+        // array with counters for all numbers in main array
+        int [] count_array = new int[N];
+        // calculate
+        for(int i = 0; i < N; i++){
+            for (int j = 0; j < N; j++){
+                if(a[i] == a[j]) count_array[i]++;
+            }
+        }
+        int max_count = 0;
+        for(int number : count_array)
+            max_count = number > max_count ? number : max_count;
+        int number_max = 0; // количество наиболее часто встречаемых чисел
+        int min_result = a[0];
+        for (int i = 0; i < N; i++)
+            if (count_array[i] == max_count){
+                min_result = a[i];
+                break;
+            }
+        for(int i = 0; i < N; i++)
+            if (count_array[i] == max_count && a[i] < min_result)
+                min_result = a[i];
+        // show result
+        for(int number : a)
+            System.out.print(number + " ");
+        System.out.println();
+        for(int number : count_array)
+            System.out.print(number + " ");
+        System.out.println();
+        System.out.println("Result: " + min_result);
     }
     public static void tenth_task(){
 
@@ -223,7 +264,7 @@ public class oneDimensional_arrays {
             case 6 -> sixth_task();
             case 7 -> seventh_task();
             case 8 -> eighth_task();
-            case 9 -> nineth_task();
+            case 9 -> ninth_task();
             case 10 -> tenth_task();
             default -> System.out.println("Error!");
         }
