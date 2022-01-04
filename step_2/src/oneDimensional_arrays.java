@@ -123,6 +123,43 @@ public class oneDimensional_arrays {
         for (int i = 0; i < N; i++)
             if (a[i] > i) System.out.print(a[i] + " ");
     }
+    public static void sixth_task(){
+        // N вещественных чисел
+        // натйи сумму тех, порядковые номера которых простые числа
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        double [] a = new double[N];
+        for(int i = 0; i < N; i++){
+            System.out.print("Enter a[" + i + "]: ");
+            a[i] = scanner.nextDouble();
+        }
+        double sum = 0;
+        // calculate
+        sum += a[1];
+        for (int i = 2; i < N; i++){
+            int count = 1; // because in all cases i%i = 0
+            for(int j = 1; j < i; j++)
+                if (i % j == 0) count++;
+            System.out.println(count);
+            if (count == 2) sum += a[i];
+
+        }
+        System.out.println("Result: " + sum);
+    }
+    public static void seventh_task(){
+
+    }
+    public static void eighth_task(){
+
+    }
+    public static void nineth_task(){
+
+    }
+    public static void tenth_task(){
+
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter task number from 1 to 10: ");
@@ -133,6 +170,11 @@ public class oneDimensional_arrays {
             case 3 -> third_task();
             case 4 -> four_task();
             case 5 -> fifth_task();
+            case 6 -> sixth_task();
+            case 7 -> seventh_task();
+            case 8 -> eighth_task();
+            case 9 -> nineth_task();
+            case 10 -> tenth_task();
             default -> System.out.println("Error!");
         }
     }
