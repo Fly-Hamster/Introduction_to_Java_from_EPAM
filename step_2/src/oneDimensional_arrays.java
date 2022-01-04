@@ -249,7 +249,24 @@ public class oneDimensional_arrays {
         System.out.println("Result: " + min_result);
     }
     public static void tenth_task(){
-
+        // массив целых чисел
+        // размер массива n
+        // сжать (каждый второй заменить 0
+        // без до массива
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N (array size): ");
+        int N = scanner.nextInt(); // get array size
+        int [] a = new int[N];
+        for(int i = 0; i < N; i++){
+            a[i] = (int)(Math.random()*10);
+        }
+        // calculate
+        for(int i = 1; i < N; i += 2) a[i] = 0;
+        // show result
+        for(int number : a)
+            System.out.print(number + " ");
+        System.out.println();
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
