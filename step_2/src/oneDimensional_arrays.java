@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 public class oneDimensional_arrays {
     public static void first_task(){
