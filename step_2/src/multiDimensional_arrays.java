@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Scanner;
 public class multiDimensional_arrays {
     public static void first_task(){
@@ -165,9 +166,11 @@ public class multiDimensional_arrays {
         //  .,   .,  ., ..., ., ., .
         // n-1, n-1, 0, ..., 0, 0, 0
         //  n,   0,  0, ..., 0, 0, 0
+        // get options
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter n-size: ");
         int n = scanner.nextInt();
+
         int [][] matrix = new int[n][n];
 
         for(int i = 0; i < n; i++){
@@ -184,7 +187,42 @@ public class multiDimensional_arrays {
         System.out.println();
     }
     public static void sixth_task(){
+        // квадратная матрица
+        // n - четное
+        // вид:
+        // 1, 1, 1, ..., 1, 1, 1
+        // 0, 1, 1, ..., 1, 1, 0
+        // 0, 0, 1, ..., 1, 0, 0
+        // ., ., ., ..., ., ., .
+        // 0, 1, 1, ..., 1, 1, 0
+        // 1, 1, 1, ..., 1, 1, 1
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter n-size: ");
+        int n = scanner.nextInt();
+        int [][] matrix = new int[n][n];
+        while (n % 2 == 1){
+            System.out.print("n % 2 == 1. Enter n % 2 == 0: ");
+            n = scanner.nextInt();
+        }
+        for (int i = 0; i < n; i++){
+            if(i < n/2)
+                for (int j = i; j < n-i; j++)
+                    matrix[i][j] = 1;
+            else
+                for (int j = i; j >= n - i-1; j--)
+                    matrix[i][j] = 1;
+        }
 
+
+        // show result
+        System.out.println("Start matrix: ");
+        for( int[] matrix_m : matrix) {
+            for (int elem : matrix_m)
+                System.out.printf("%-10s", elem + " ");
+            System.out.println();
+        }
+        System.out.println();
     }
     public static void seventh_task(){
 
