@@ -124,6 +124,35 @@ public class multiDimensional_arrays {
             System.out.println(matrix[i][p]);
     }
     public static void four_task(){
+        // create matrix:
+        //  1,   2,   3,  ..., n
+        //  n,  n-1, n-2, ..., 1
+        //  1,   2,   3,  ..., n
+        //  n,  n-1, n-2, ..., 1
+        // ..., ..., ..., ..., ...
+        //  n,  n-1, n-2, ..., 1
+
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter n-size: ");
+        int n = scanner.nextInt();
+        int [][] matrix = new int[n][n];
+        for (int i = 0; i < n; i++){
+            if (i % 2 == 0)
+                for(int j = 0; j < n; j++)
+                    matrix[i][j] = j + 1;
+            else
+                for(int j = 0; j < n; j++)
+                    matrix[i][j] = n - j;
+
+        }
+        System.out.println("Start matrix: ");
+        for( int[] matrix_m : matrix) {
+            for (int elem : matrix_m)
+                System.out.printf("%-10s", elem + " ");
+            System.out.println();
+        }
+        System.out.println();
 
     }
     public static void fifth_task(){
