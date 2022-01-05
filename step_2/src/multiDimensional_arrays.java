@@ -146,6 +146,8 @@ public class multiDimensional_arrays {
                     matrix[i][j] = n - j;
 
         }
+
+        // show result
         System.out.println("Start matrix: ");
         for( int[] matrix_m : matrix) {
             for (int elem : matrix_m)
@@ -156,7 +158,30 @@ public class multiDimensional_arrays {
 
     }
     public static void fifth_task(){
+        // create matrix:
+        //  1,   1,  1, ..., 1, 1, 1
+        //  2,   2,  2, ..., 2, 2, 0
+        //  3,   3,  3, ..., 3, 0, 0
+        //  .,   .,  ., ..., ., ., .
+        // n-1, n-1, 0, ..., 0, 0, 0
+        //  n,   0,  0, ..., 0, 0, 0
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter n-size: ");
+        int n = scanner.nextInt();
+        int [][] matrix = new int[n][n];
 
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n - i; j++)
+                matrix[i][j] = i + 1;
+        }
+        // show result
+        System.out.println("Start matrix: ");
+        for( int[] matrix_m : matrix) {
+            for (int elem : matrix_m)
+                System.out.printf("%-10s", elem + " ");
+            System.out.println();
+        }
+        System.out.println();
     }
     public static void sixth_task(){
 
