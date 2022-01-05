@@ -49,7 +49,34 @@ public class multiDimensional_arrays {
 
     }
     public static void second_task(){
+        // есть квадратная матрица
+        // вывести элементы на диагонали
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter m-size: ");
+        int m = scanner.nextInt();
+        double[][] matrix = new double[m][m];
+        for(int i = 0; i < m; i++)
+            for(int j = 0; j < m; j++)
+                matrix[i][j] = ((int)(Math.random()*100));
 
+        // show start matrix
+        System.out.println("Start matrix: ");
+        for( double[] matrix_m : matrix) {
+            for (double elem : matrix_m)
+                System.out.printf("%-10s", elem + " ");
+            System.out.println();
+        }
+        System.out.println();
+
+        // calculate and show result
+        System.out.println("Main diagonal: ");
+        for(int i = 0; i < m; i++)
+            System.out.print(matrix[i][i] + " ");
+        System.out.println();
+        System.out.println("Side diagonal: ");
+        for(int i = 0, j = m-1; i <m && j >= 0; i++, j--)
+                System.out.print(matrix[i][j] + " ");
     }
     public static void third_task(){
 
