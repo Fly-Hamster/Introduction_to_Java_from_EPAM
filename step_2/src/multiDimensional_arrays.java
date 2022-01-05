@@ -79,7 +79,49 @@ public class multiDimensional_arrays {
                 System.out.print(matrix[i][j] + " ");
     }
     public static void third_task(){
+        // дана матрица
+        // вывести k-строку и р-столбец
+        // get options
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter m-size: ");
+        int m = scanner.nextInt();
+        System.out.print("Enter n-size: ");
+        int n = scanner.nextInt();
+        double[][] matrix = new double[m][n];
+        for(int i = 0; i < m; i++)
+            for(int j = 0; j < n; j++)
+                matrix[i][j] = ((int)(Math.random()*100));
 
+        // get k-param, p-param and chek params
+        System.out.print("Enter k: ");
+        int k = scanner.nextInt();
+        while (k > m){
+            System.out.print("K > m-size. Enter k < m-size: ");
+            k = scanner.nextInt();
+        }
+        System.out.print("Enter p: ");
+        int p = scanner.nextInt();
+        while (p > n){
+            System.out.print("p > n-size. Enter p < n-size: ");
+            p = scanner.nextInt();
+        }
+        // show start matrix
+        System.out.println("Start matrix: ");
+        for( double[] matrix_m : matrix) {
+            for (double elem : matrix_m)
+                System.out.printf("%-10s", elem + " ");
+            System.out.println();
+        }
+        System.out.println();
+        // show k-line
+        System.out.println("k-line: ");
+        for(int i = 0; i < n; i++)
+            System.out.print(matrix[k][i] + " ");
+        System.out.println();
+        // show p-column
+        System.out.println("p-column: ");
+        for(int i = 0; i < m; i++)
+            System.out.println(matrix[i][p]);
     }
     public static void four_task(){
 
